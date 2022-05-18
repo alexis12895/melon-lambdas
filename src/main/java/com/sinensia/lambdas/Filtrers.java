@@ -22,11 +22,11 @@ public final class Filtrers {
     }
 
     public static List<Melon> filterByWeight(List<Melon> melons, int peso) {
-        if(melons == null || peso  < 1){
+        if(melons == null){
             throw new IllegalArgumentException("Melons/peso cannot be null");
         }
 
-        if(melons.isEmpty()){
+        if(melons.isEmpty() || peso  <= 0){
             return melons;
         }
 
@@ -41,11 +41,11 @@ public final class Filtrers {
     }
 
     public static List<Melon> filterByWeightH(List<Melon> melons, int peso) {
-        if(melons == null || peso  < 1){
+        if(melons == null){
             throw new IllegalArgumentException("Melons/peso cannot be null");
         }
 
-        if(melons.isEmpty()){
+        if(melons.isEmpty() || peso  <= 0){
             return melons;
         }
 
@@ -79,6 +79,20 @@ public final class Filtrers {
         return result;
     }
     */
+
+    public static List<Melon> filterMelon(List<Melon> melons, MelonPredicate predicate){
+        if(melons==null){
+            throw new IllegalArgumentException("Melons/peso cannot be null");
+        }
+
+        List<Melon> result = new ArrayList<>();
+        for (Melon melon: melons){
+            if(melon!=null && predicate.test(melon)){
+                result.add(melon);
+            }
+        }
+        return result;
+    }
 
 
 }

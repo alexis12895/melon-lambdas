@@ -46,6 +46,13 @@ public class Main {
         }
          */
 
+        //Con un metodo anonimo, new GacMelonPre...
+        List<Melon> gac = Filtrers.filterMelon(melons,  new GacMelonPredicate());
+        System.out.println("\nLista filtrada gac: ");
+        for (Melon m: gac) {
+            System.out.println(m);
+        }
+
     }
 
 
