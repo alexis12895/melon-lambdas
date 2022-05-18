@@ -47,6 +47,7 @@ public class Main {
 
 
         //Directamente hemos creado la clase anonima que implementa MelonPredicate y asi podemos implementarla aqui mismo
+        /*
         List<Melon> superheavy = Filtrers.filterMelon(melons, new MelonPredicate() {
             @Override
             public boolean test(Melon melon) {
@@ -57,7 +58,14 @@ public class Main {
         for (Melon m: superheavy) {
             System.out.println(m);
         }
+         */
 
+        //lo mismo pero con lamdas
+        List<Melon> superheavy = Filtrers.filterMelon(melons, melon -> melon!=null && melon.getWight() >= 6000);
+        System.out.println("\nLista melones super-pesados: ");
+        for (Melon m: superheavy) {
+            System.out.println(m);
+        }
 
     }
 
