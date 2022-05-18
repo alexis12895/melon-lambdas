@@ -61,11 +61,27 @@ public class Main {
          */
 
         //lo mismo pero con lamdas
+        /*
         List<Melon> superheavy = Filtrers.filterMelon(melons, melon -> melon!=null && melon.getWight() >= 6000);
         System.out.println("\nLista melones super-pesados: ");
         for (Melon m: superheavy) {
             System.out.println(m);
         }
+        */
+
+        //Incorporandolo en el mismo for
+        System.out.println("Lista melones europeos: ");
+        for(Melon m:  Filtrers.filterMelon(melons, melon -> melon!=null && melon.getOrigin().equalsIgnoreCase("Europe"))) {
+            System.out.println(m);
+        }
+
+        //Con un metodo de filtrado generico y usar las lambdas
+        System.out.println("Lista sandias: ");
+        List<Melon> watermelons = Filtrers.filter(melons, (Melon m)->m.getType().equalsIgnoreCase("watermelon"));
+        for(Melon m: watermelons) {
+            System.out.println(m);
+        }
+
 
     }
 

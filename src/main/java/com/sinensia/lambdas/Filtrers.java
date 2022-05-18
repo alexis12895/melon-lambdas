@@ -54,5 +54,18 @@ public final class Filtrers {
         return result;
     }
 
+    public static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
+        if(list==null) {
+            throw new IllegalArgumentException("List cannot be null");
+        }
+        List<T> result = new ArrayList<>();
+        for(T t: list) {
+            if(t!=null && predicate.test(t)) {
+                result.add(t);
+            }
+        }
+        return result;
+    }
+
 
 }
