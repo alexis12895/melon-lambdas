@@ -1,5 +1,8 @@
 package com.sinensia.lambdas;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +17,6 @@ public class Main {
         for (int i = 0; i < melons.size(); ++i) {
             System.out.println(melons.get(i).toString());
         }
-
+        
     }
 }
