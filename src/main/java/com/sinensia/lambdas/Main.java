@@ -32,26 +32,32 @@ public class Main {
             System.out.println(m);
         }
 
-        List<Melon> foundH = Filtrers.filterByWeightH(melons,  5000);
-        System.out.println("\nLista filtrada por peso mayor: ");
-        for (Melon m: foundH) {
-            System.out.println(m);
-        }
-
-        /*
-        List<Melon> foundMn = Filtrers.filterByWeightMn(melons, 1000);
-        System.out.println("\nLista filtrada por peso menor: ");
-        for (Melon m: foundMn) {
-            System.out.println(m);
-        }
-         */
-
         //Con un metodo anonimo, new GacMelonPre...
         List<Melon> gac = Filtrers.filterMelon(melons,  new GacMelonPredicate());
-        System.out.println("\nLista filtrada gac: ");
+        System.out.println("\nLista filtrada por nombre gac: ");
         for (Melon m: gac) {
             System.out.println(m);
         }
+
+        List<Melon> heavy = Filtrers.filterMelon(melons,  new HeavyMelonPredicate());
+        System.out.println("\nLista melones pesados: ");
+        for (Melon m: heavy) {
+            System.out.println(m);
+        }
+
+
+        //Directamente hemos creado la clase anonima que implementa MelonPredicate y asi podemos implementarla aqui mismo
+        List<Melon> superheavy = Filtrers.filterMelon(melons, new MelonPredicate() {
+            @Override
+            public boolean test(Melon melon) {
+                return melon!=null && melon.getWight() >= 6000;
+            }
+        });
+        System.out.println("\nLista melones super-pesados: ");
+        for (Melon m: superheavy) {
+            System.out.println(m);
+        }
+
 
     }
 
