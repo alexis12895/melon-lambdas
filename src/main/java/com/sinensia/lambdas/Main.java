@@ -20,7 +20,7 @@ public class Main {
             System.out.println(melons.get(i).toString());
         }
 
-        List<Melon> bailan = filterByType(melons, "Bailan");
+        List<Melon> bailan = Filtrers.filterByType(melons, "Bailan");
 
 
         System.out.println("\nLista filtrada por nombre Bailan: ");
@@ -30,16 +30,5 @@ public class Main {
 
     }
 
-    private static List<Melon> filterByType(List<Melon> melons, String bailan) {
-        List<Melon> x = new ArrayList<>();
-
-        for (int i = 0; i < melons.size(); ++i) {
-            if(bailan.equals(melons.get(i).getType()))
-            {
-                x.add(melons.get(i));
-            }
-        }
-        return x;
-    }
 
 }
