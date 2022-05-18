@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         List<Melon> melons = Arrays.asList(
                 new Melon("Gac", 5500, "Europe"),
                 new Melon("Bailan", 6000, "China"),
@@ -21,12 +21,30 @@ public class Main {
         }
 
         List<Melon> bailan = Filtrers.filterByType(melons, "Bailan");
-
-
         System.out.println("\nLista filtrada por nombre Bailan: ");
         for (int i = 0; i < bailan.size(); ++i) {
             System.out.println(bailan.get(i).toString());
         }
+
+        List<Melon> found = Filtrers.filterByWeight(melons, 1300);
+        System.out.println("\nLista filtrada por peso: ");
+        for (Melon m: found) {
+            System.out.println(m);
+        }
+
+        List<Melon> foundH = Filtrers.filterByWeightH(melons,  5000);
+        System.out.println("\nLista filtrada por peso mayor: ");
+        for (Melon m: foundH) {
+            System.out.println(m);
+        }
+
+        /*
+        List<Melon> foundMn = Filtrers.filterByWeightMn(melons, 1000);
+        System.out.println("\nLista filtrada por peso menor: ");
+        for (Melon m: foundMn) {
+            System.out.println(m);
+        }
+         */
 
     }
 
