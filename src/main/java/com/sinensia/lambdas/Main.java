@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public class Main {
 
+    private String test;
     public static void main(String[] args) throws IllegalAccessException {
         List<Melon> melons = Arrays.asList(
                 new Melon("Gac", 5500, "Europe"),
