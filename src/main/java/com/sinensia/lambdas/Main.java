@@ -13,8 +13,7 @@ public class Main {
                 new Melon("Bailan", 6000, "China"),
                 new Melon("Watermelon", 1200, "Europe"),
                 new Melon("Gac", 3400, "US"),
-                new Melon("Bailan", 1300, "China"),
-                new Melon("Gac", 1300, "BORRAR")
+                new Melon("Bailan", 1300, "China")
         );
 
         System.out.println("Lista completa: ");
